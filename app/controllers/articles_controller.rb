@@ -12,16 +12,16 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(params[:article])
-    @article.user_id = current_user.id
+    @article = current_user.articles.new(article_params)
     @article.save
-    redirect_to article_path(@article)
+    redirect_to articles_path
   end
+
 
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
-    redirect_to action:  'index'
+    redirect_to action: 'index'
   end
 
   def edit
@@ -33,5 +33,11 @@ class ArticlesController < ApplicationController
     @article.update_attributes(params[:article])
     flash.notice = "Article '#{@article.title}' Updated!"
     redirect_to article_path(@article)
+   end
+
+   private
+
+   def article_params
+    params.require(:article).permit(:title, :description)
    end
 end
