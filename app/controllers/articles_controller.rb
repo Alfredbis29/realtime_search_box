@@ -7,9 +7,9 @@ class ArticlesController < ApplicationController
     @input = params[:title].downcase
     result = Article.find_by(title: @input)
     if result.present?
-      puts "here is the result #{result}"
+      Rails.logger.debug "here is the result #{result}"
     else
-      puts "nothing"
+      Rails.logger.debug "nothing"
     end
   end
 
@@ -43,7 +43,6 @@ class ArticlesController < ApplicationController
     flash.notice = "Article '#{@article.title}' Updated!"
     redirect_to article_path(@article)
   end
-
 
   private
 
