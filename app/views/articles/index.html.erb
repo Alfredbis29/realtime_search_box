@@ -1,13 +1,18 @@
 <h1>Listing all articles</h1>
+  <%= render "articles/search" %>
 <table>
  <tr>
   <th>Title</th>
   <th>Description</th>
  </tr>
  <% @articles.each do |article| %>
- <tr>
+  <tr>
   <td><%= article.title %></td>
   <td><%= article.description %></td>
- </tr>
+  </tr>
  <% end %>
-</table>
+ </table>
+
+
+
+
