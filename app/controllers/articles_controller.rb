@@ -6,10 +6,6 @@ class ArticlesController < ApplicationController
   def search
     @input = params[:title].downcase
     @result = Article.find_by(title: @input)
-    if @result?
-      redirect_to "articles/#{@result.id}"
-
-    # puts "here is the result#{@result.title}"
   end
 
   def show
