@@ -1,0 +1,53 @@
+
+body {
+  background-color: rgba(132, 115, 200, 0.711);
+  margin: 42px;
+}
+
+
+ul li a {
+font-family: sans-serif;
+text-decoration: none;
+display: inline-table;
+}
+
+.mb {
+  margin-bottom: 20px;
+}
+
+.registration {
+  border: 3px solid rgb(2, 20, 27);
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+.registration-heading {
+  align-self: center;
+}
+
+.input {
+  padding: 10px;
+}
+
+.email-label {
+ margin-right: 110px;
+}
+
+.password-label {
+  margin-right: 85px;
+ }
+
+ .sign-up-btn {
+  background-color: rgb(206, 94, 94);
+ }
+
+.container {
+  border: 3px solid rgb(2, 20, 27);
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  }
