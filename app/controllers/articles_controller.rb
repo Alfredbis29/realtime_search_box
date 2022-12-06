@@ -3,6 +3,16 @@ class ArticlesController < ApplicationController
     @articles = Article.all
   end
 
+  def search
+    @input = params[:title].downcase
+    result = Article.find_by(title: @input)
+    if result.present?
+      puts "here is the result #{result}"
+    else
+      puts "nothing"
+    end
+  end
+
   def show
     @article = Article.find(params[:id])
   end
@@ -33,6 +43,7 @@ class ArticlesController < ApplicationController
     flash.notice = "Article '#{@article.title}' Updated!"
     redirect_to article_path(@article)
   end
+
 
   private
 
